@@ -6,13 +6,12 @@
 <ul>
     <li><strong>Flask</strong>: A lightweight web framework for Python.</li>
     <li><strong>requests</strong>: For making HTTP requests to fetch the web page content.</li>
-    <li><strong>beautifulsoup4</strong>: For parsing HTML content.</li>
-    <li><strong>lxml</strong>: An HTML/XML parser (optional but recommended for BeautifulSoup).</li>
+    <li><strong>re</strong>: For parsing HTML content with regular expressions.</li>
 </ul>
 
 <h3>Installing Required Libraries</h3>
 <p>You can install the required libraries using pip. Run the following command:</p>
-<pre><code>pip install Flask requests beautifulsoup4 lxml</code></pre>
+<pre><code>pip install Flask requests</code></pre>
 
 <h2>Applications Needed</h2>
 <ul>
@@ -24,9 +23,9 @@
     <li><strong>Navigate to the Directory:</strong> Open a terminal or command prompt and navigate to the directory where your <code>getTimeStories.py</code> file is located.</li>
     <li><strong>Start the Flask Application:</strong> Run the following command to start the Flask server:
         <pre><code>python getTimeStories.py</code></pre>
-        Upon successful start of the server, you will see output indicating that Flask is running and listening on a specific port for example "http://127.0.0.1:5000".
+        Upon successful start of the server, you will see output indicating that Flask is running and listening on a specific port, for example, "http://127.0.0.1:5000".
     </li>
-    <li><strong>Access the API:</strong> Open any web browser and go to the following URL with the specied port (in our case "5000"):
+    <li><strong>Access the API:</strong> Open any web browser and go to the following URL with the specified port (in our case "5000"):
         <ul>
             <li><a href="http://127.0.0.1:5000/getTimeStories" target="_blank">http://127.0.0.1:5000/getTimeStories</a></li>
             <li><a href="http://localhost:5000/getTimeStories" target="_blank">http://localhost:5000/getTimeStories</a></li>
@@ -38,7 +37,7 @@
 <h2>How It Works</h2>
 <ol>
     <li><strong>Fetching Data:</strong> The application makes an HTTP GET request to Time.com to fetch the latest stories from the homepage.</li>
-    <li><strong>Parsing HTML:</strong> The fetched HTML content is parsed using BeautifulSoup to locate the section with the latest stories.</li>
+    <li><strong>Parsing HTML:</strong> The fetched HTML content is parsed using regular expressions to locate the section with the latest stories.</li>
     <li><strong>Extracting Stories:</strong> The application extracts the titles and links of the 6 most recent stories.</li>
     <li><strong>Serving JSON:</strong> The extracted stories are returned as a JSON array via the <code>/getTimeStories</code> endpoint.</li>
 </ol>
